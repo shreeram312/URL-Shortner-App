@@ -5,9 +5,21 @@ import React, { useState } from "react";
 
 export default function ShortenForm() {
   const [url, setUrl] = useState<string>("");
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(url);
+    try {
+      const response = await fetch("/api/shorten", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          url,
+        }),
+      });
+      await response;
+    } catch (e) {
+      console.log(e);
+    } finally {
+    }
   }
   return (
     <form onSubmit={handleSubmit} className="mb-4">
