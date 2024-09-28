@@ -15,7 +15,9 @@ export default function ShortenForm() {
           url,
         }),
       });
-      await response;
+
+      await response.json();
+      setUrl("");
     } catch (e) {
       console.log(e);
     } finally {
