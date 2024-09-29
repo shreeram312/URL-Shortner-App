@@ -3,7 +3,7 @@ import { useState } from "react";
 import ShortenForm from "./shorten-form";
 import UrlList from "./url-list";
 
-export default function () {
+export default function UrlShortnerContainer() {
   const [refreshKey, setrefreshKey] = useState<number>(0);
 
   const handleUrlShortened = () => {

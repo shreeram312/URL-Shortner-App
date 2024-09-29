@@ -1,5 +1,4 @@
 import prisma from "@/lib/db";
-import { X } from "lucide-react";
 import { nanoid } from "nanoid";
 import { NextRequest, NextResponse } from "next/server";
 
